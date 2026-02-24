@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- daisyui & tailwindcss link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -29,7 +29,27 @@
 
 </head>
 
-<body>
+<body class="bg-base-200 pb-10 pt-10">
+    <header class="w-[80%] mx-auto">
+        <h1 class="text-4xl text-[#002C5C] font-bold">Job Application Tracker</h1>
+        <div class="header-card grid grid-cols-1 sm:grid-cols-3 gap-5 mt-5">
+            <div class="p-5 bg-base-100 shadow rounded-xl">
+                <p>Total</p>
+                <p id="total" class="font-bold text-xl">0</p>
+            </div>
+            <div class="p-5 bg-base-100 shadow rounded-xl">
+                <p>Interview</p>
+                <p id="interview" class="font-bold text-xl text-green-500">0</p>
+            </div>
+            <div class="p-5 bg-base-100 shadow rounded-xl">
+                <p>Rejected</p>
+                <p id="rejected" class="font-bold text-xl text-red-500">0</p>
+            </div>
+        </div>
+        <hr class="my-10 text border-base-300 border-1">
+    </header>
+
+
 
     <script src="js/script.js"></script>
 </body>
