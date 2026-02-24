@@ -56,8 +56,9 @@
             <div class="">
                 <h2 class="text-2xl font-semibold text-[#002C5C]">Available Jobs</h2>
             </div>
-            <div class="text-right">
-                <p class="text-[#64748B]">8 jobs</p>
+            <div class="text-right text-[#64748B]">
+                <span id="counting" class="count">8</span>
+                <span>jobs</span>
             </div>
         </section>
 
@@ -71,19 +72,25 @@
                 class="btn text-[#444a52]">Rejected</button>
         </div>
 
+        <!-- Filtered card -->
+        <section id="filter-section" class="hidden">
+
+
+        </section>
+
         <!-- card section -->
         <section id="all-cards" class="card-section  mt-10 space-y-5">
             <!-- card - 1st -->
-            <div class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
+            <div id="one" class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
                 <div class="space-y-6">
                     <div class="space-y-2">
-                        <p class="text-2xl font-semibold text-[#002C5C]">Google</p>
-                        <p class="text-[#64748B]">Software Engineer</p>
+                        <p class="companyName text-2xl font-semibold text-[#002C5C]">Google</p>
+                        <p class="position text-[#64748B]">Software Engineer</p>
                     </div>
-                    <p class="text-[#64748B]">Remote • Full-time • $120,000 - $180,000</p>
+                    <p class="salary text-[#64748B]">Remote • Full-time • $120,000 - $180,000</p>
                     <div class="space-y-2">
-                        <p class="bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
-                        <p class="text-[#64748B]">Develop scalable applications and cloud-based solutions used by
+                        <p class="type bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
+                        <p class="notes text-[#64748B]">Develop scalable applications and cloud-based solutions used by
                             billions of users</p>
                     </div>
                     <div class="flex gap-3">
@@ -92,21 +99,21 @@
                     </div>
                 </div>
                 <div class="mt-5 mr-5">
-                    <span class="text-[#64748B] border border-gray-300 rounded-full p-2"><i
+                    <span onclick="deleteItem('one')" id="delete-icon" class="deleted text-[#64748B] border border-gray-300 rounded-full p-2"><i
                             class="fa-regular fa-trash-can"></i></span>
                 </div>
             </div>
             <!-- card - 2nd -->
-            <div class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
+            <div id="two" class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
                 <div class="space-y-6">
                     <div class="space-y-2">
-                        <p class="text-2xl font-semibold text-[#002C5C]">Microsoft</p>
-                        <p class="text-[#64748B]">Cloud Engineer</p>
+                        <p class="companyName text-2xl font-semibold text-[#002C5C]">Microsoft</p>
+                        <p class="position text-[#64748B]">Cloud Engineer</p>
                     </div>
-                    <p class="text-[#64748B]">Hybrid • Full-time • $110,000 - $160,000</p>
+                    <p class="salary text-[#64748B]">Hybrid • Full-time • $110,000 - $160,000</p>
                     <div class="space-y-2">
-                        <p class="bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
-                        <p class="text-[#64748B]">Manage and deploy cloud infrastructure solutions using Azure and
+                        <p class="type bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
+                        <p class="notes text-[#64748B]">Manage and deploy cloud infrastructure solutions using Azure and
                             enterprise technologies.</p>
                     </div>
                     <div class="flex gap-3">
@@ -115,21 +122,22 @@
                     </div>
                 </div>
                 <div class="mt-5 mr-5">
-                    <span class="text-[#64748B] border border-gray-300 rounded-full p-2"><i
+                    <span id="delete-icon" class="deleted text-[#64748B] border border-gray-300 rounded-full p-2"><i
                             class="fa-regular fa-trash-can"></i></span>
                 </div>
             </div>
             <!-- card - 3nd -->
-            <div class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
+            <div id="three" class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
                 <div class="space-y-6">
                     <div class="space-y-2">
-                        <p class="text-2xl font-semibold text-[#002C5C]">Amazon</p>
-                        <p class="text-[#64748B]">Data Analyst</p>
+                        <p class="companyName text-2xl font-semibold text-[#002C5C]">Amazon</p>
+                        <p class="position text-[#64748B]">Data Analyst</p>
                     </div>
-                    <p class="text-[#64748B]">Onsite • Full-time • $90,000 - $130,000</p>
+                    <p class="salary text-[#64748B]">Onsite • Full-time • $90,000 - $130,000</p>
                     <div class="space-y-2">
-                        <p class="bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
-                        <p class="text-[#64748B]">Analyze large-scale customer data to improve logistics, e-commerce
+                        <p class="type bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
+                        <p class="notes text-[#64748B]">Analyze large-scale customer data to improve logistics,
+                            e-commerce
                             performance, and user experience.</p>
                     </div>
                     <div class="flex gap-3">
@@ -138,21 +146,22 @@
                     </div>
                 </div>
                 <div class="mt-5 mr-5">
-                    <span class="text-[#64748B] border border-gray-300 rounded-full p-2"><i
+                    <span id="delete-icon" class="deleted text-[#64748B] border border-gray-300 rounded-full p-2"><i
                             class="fa-regular fa-trash-can"></i></span>
                 </div>
             </div>
             <!-- card - 4th -->
-            <div class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
+            <div id="four" class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
                 <div class="space-y-6">
                     <div class="space-y-2">
-                        <p class="text-2xl font-semibold text-[#002C5C]">Meta</p>
-                        <p class="text-[#64748B]">Frontend Developer</p>
+                        <p class="companyName text-2xl font-semibold text-[#002C5C]">Meta</p>
+                        <p class="position text-[#64748B]">Frontend Developer</p>
                     </div>
-                    <p class="text-[#64748B]">Remote • Full-time • $115,000 - $170,000</p>
+                    <p class="salary text-[#64748B]">Remote • Full-time • $115,000 - $170,000</p>
                     <div class="space-y-2">
-                        <p class="bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
-                        <p class="text-[#64748B]">Build interactive and high-performance UI for social media platforms
+                        <p class="type bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
+                        <p class="notes text-[#64748B]">Build interactive and high-performance UI for social media
+                            platforms
                             used globally.</p>
 
                     </div>
@@ -162,21 +171,22 @@
                     </div>
                 </div>
                 <div class="mt-5 mr-5">
-                    <span class="text-[#64748B] border border-gray-300 rounded-full p-2"><i
+                    <span id="delete-icon" class="deleted text-[#64748B] border border-gray-300 rounded-full p-2"><i
                             class="fa-regular fa-trash-can"></i></span>
                 </div>
             </div>
             <!-- card -5th -->
-            <div class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
+            <div id="five" class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
                 <div class="space-y-6">
                     <div class="space-y-2">
-                        <p class="text-2xl font-semibold text-[#002C5C]">Tesla</p>
-                        <p class="text-[#64748B]">Mechanical Engineer</p>
+                        <p class="companyName text-2xl font-semibold text-[#002C5C]">Tesla</p>
+                        <p class="position text-[#64748B]">Mechanical Engineer</p>
                     </div>
-                    <p class="text-[#64748B]">Onsite • Full-time • $95,000 - $140,000</p>
+                    <p class="salary text-[#64748B]">Onsite • Full-time • $95,000 - $140,000</p>
                     <div class="space-y-2">
-                        <p class="bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
-                        <p class="text-[#64748B]">Design and improve electric vehicle components and sustainable energy
+                        <p class="type bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
+                        <p class="notes text-[#64748B]">Design and improve electric vehicle components and sustainable
+                            energy
                             systems.</p>
                     </div>
                     <div class="flex gap-3">
@@ -185,21 +195,21 @@
                     </div>
                 </div>
                 <div class="mt-5 mr-5">
-                    <span class="text-[#64748B] border border-gray-300 rounded-full p-2"><i
+                    <span id="delete-icon" class="deleted text-[#64748B] border border-gray-300 rounded-full p-2"><i
                             class="fa-regular fa-trash-can"></i></span>
                 </div>
             </div>
             <!-- card - 6th -->
-            <div class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
+            <div id="six" class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
                 <div class="space-y-6">
                     <div class="space-y-2">
-                        <p class="text-2xl font-semibold text-[#002C5C]">Innovation Labs</p>
-                        <p class="text-[#64748B]">UI/UX Engineer</p>
+                        <p class="companyName text-2xl font-semibold text-[#002C5C]">Innovation Labs</p>
+                        <p class="position text-[#64748B]">UI/UX Engineer</p>
                     </div>
-                    <p class="text-[#64748B]">Austin, TX • Full-time • $110,000 - $150,000</p>
+                    <p class="salary text-[#64748B]">Austin, TX • Full-time • $110,000 - $150,000</p>
                     <div class="space-y-2">
-                        <p class="bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
-                        <p class="text-[#64748B]">Develop scalable applications and cloud-based solutions used by
+                        <p class="type bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
+                        <p class="notes text-[#64748B]">Develop scalable applications and cloud-based solutions used by
                             billions
                             of
                             users</p>
@@ -210,21 +220,22 @@
                     </div>
                 </div>
                 <div class="mt-5 mr-5">
-                    <span class="text-[#64748B] border border-gray-300 rounded-full p-2"><i
+                    <span id="delete-icon" class="deleted text-[#64748B] border border-gray-300 rounded-full p-2"><i
                             class="fa-regular fa-trash-can"></i></span>
                 </div>
             </div>
             <!-- card - 7th -->
-            <div class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
+            <div id="seven" class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
                 <div class="space-y-6">
                     <div class="space-y-2">
-                        <p class="text-2xl font-semibold text-[#002C5C]">CloudFirst Inc</p>
-                        <p class="text-[#64748B]">Backend Developer</p>
+                        <p class="companyName text-2xl font-semibold text-[#002C5C]">CloudFirst Inc</p>
+                        <p class="position text-[#64748B]">Backend Developer</p>
                     </div>
-                    <p class="text-[#64748B]">Seattle, WA • Full-time • $120,000 - $180,000</p>
+                    <p class="salary text-[#64748B]">Seattle, WA • Full-time • $120,000 - $180,000</p>
                     <div class="space-y-2">
-                        <p class="bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
-                        <p class="text-[#64748B]">Design and maintain scalable backend systems using Python and AWS.
+                        <p class="type bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
+                        <p class="notes text-[#64748B]">Design and maintain scalable backend systems using Python and
+                            AWS.
                             Work
                             with modern DevOps practices and cloud infrastructure.</p>
                     </div>
@@ -234,21 +245,21 @@
                     </div>
                 </div>
                 <div class="mt-5 mr-5">
-                    <span class="text-[#64748B] border border-gray-300 rounded-full p-2"><i
+                    <span id="delete-icon" class="deleted text-[#64748B] border border-gray-300 rounded-full p-2"><i
                             class="fa-regular fa-trash-can"></i></span>
                 </div>
             </div>
             <!-- card- 8th -->
-            <div class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
+            <div id="eight" class="bg-base-100 shadow rounded-xl p-6 flex justify-between">
                 <div class="space-y-6">
                     <div class="space-y-2">
-                        <p class="text-2xl font-semibold text-[#002C5C]">StartupXYZ</p>
-                        <p class="text-[#64748B]">Full Stack Engineer</p>
+                        <p class="companyName text-2xl font-semibold text-[#002C5C]">StartupXYZ</p>
+                        <p class="position text-[#64748B]">Full Stack Engineer</p>
                     </div>
-                    <p class="text-[#64748B]">Remote • Full-time • $120,000 - $160,000</p>
+                    <p class="salary text-[#64748B]">Remote • Full-time • $120,000 - $160,000</p>
                     <div class="space-y-2">
-                        <p class="bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
-                        <p class="text-[#64748B]">Join our fast-growing startup and work on our core platform.
+                        <p class="type bg-gray-200 inline-block py-2 px-4 font-semibold rounded-md">NOT APPLIED</p>
+                        <p class="notes text-[#64748B]">Join our fast-growing startup and work on our core platform.
                             Experience
                             with Node.js and React required. Great benefits and equity package included.</p>
                     </div>
@@ -258,11 +269,16 @@
                     </div>
                 </div>
                 <div class="mt-5 mr-5">
-                    <span class="text-[#64748B] border border-gray-300 rounded-full p-2"><i
+                    <span id="delete-icon" class="deleted text-[#64748B] border border-gray-300 rounded-full p-2"><i
                             class="fa-regular fa-trash-can"></i></span>
                 </div>
             </div>
         </section>
+        <div id="no-data-interview" class="hidden">
+            <img src="images/jobs.png" alt="">
+            <h2>No jobs available</h2>
+            <p>Check back soon for new job opportunities</p>
+        </div>
     </main>
 
 
